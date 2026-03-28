@@ -1,0 +1,204 @@
+/**
+* @theme nypl
+* @auto-scaling true
+*/
+
+/* 1. IMPORTS */
+@import url('https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+/* 2. VARIABLES */
+:root {
+    --nypl-red: #CE0E2D;
+    --nypl-black: #000000;
+    --nypl-gray: #888888;
+    --nypl-white: #FFFFFF;
+    --bg-code: #EEEEEE;
+
+    --font-main: 'Open Sans', sans-serif;
+    --font-mono: 'Source Code Pro', monospace;
+
+    --section-width: 1280px;
+    --section-height: 720px;
+    --padding-main: 60px 80px;
+}
+
+/* 3. BASE SECTION STYLES */
+section {
+    width: var(--section-width);
+    height: var(--section-height);
+    font-family: var(--font-main);
+    font-size: 22px;
+    font-weight: 400;
+    padding: var(--padding-main);
+    color: var(--nypl-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    /* Pagination (Global) */
+    &::after {
+        content: attr(data-marpit-pagination);
+        font-size: 0.8em;
+        bottom: 0px;
+        right: 0px;
+        position: absolute;
+    }
+}
+
+/* 4. LAYOUT VARIATIONS */
+
+/* Title Slide */
+section.title {
+    justify-content: center;
+
+    h1 {
+        font-size: 2.0rem;
+        color: var(--nypl-red);
+    }
+
+    &::after {
+        display: none;
+    }
+
+    /* Hide page number */
+}
+
+/* Inverted Slide */
+section.inverted {
+    background-color: var(--nypl-red);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+        font-size: 2.0rem;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Hide everything except the H1 */
+    &::after {
+        display: none;
+    }
+
+    /* Hide pagination */
+    p,
+    li,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    img,
+    pre,
+    table {
+        display: none;
+    }
+}
+
+/* 5. TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 900;
+    margin: 0.75rem 0 0.5rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 1.6rem;
+    color: var(--nypl-red);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1.1rem;
+}
+
+p,
+ol,
+ul {
+    margin: 0 0 0.5rem;
+    line-height: 1.5;
+}
+
+li {
+    &::marker {
+        color: var(--nypl-red);
+        font-weight: 700;
+    }
+}
+
+/* 6. COMPONENTS */
+
+/* Code Blocks */
+pre,
+code {
+    font-family: var(--font-mono);
+    border-radius: 4px;
+}
+
+code {
+    background: var(--bg-code);
+    padding: 2px 4px;
+}
+
+pre {
+    background: var(--bg-code);
+    font-size: 0.8em;
+    padding: 16px;
+    margin: 0 0 1rem;
+    overflow: visible;
+
+    code {
+        background: none;
+        padding: 0;
+    }
+
+    &::part(auto-scaling) {
+        max-height: 420px;
+    }
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+
+    th,
+    td {
+        border-bottom: 1px dashed var(--nypl-gray);
+        padding: 8px 4px;
+        text-align: left;
+    }
+
+    th {
+        border-bottom: 2px double var(--nypl-gray);
+        color: var(--nypl-red);
+    }
+}
+
+/* Media */
+img {
+    margin: 0.5rem 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
