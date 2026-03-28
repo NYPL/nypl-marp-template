@@ -1,8 +1,8 @@
 # New York Public Library's Marp Template
 
-Use markdown to create beautiful slide decks with NYPL-themed template:[Sample PDF output]()
+Use markdown to create beautiful slide decks with NYPL-themed template: [Sample PDF output](https://raw.githubusercontent.com/NYPL/nypl-marp-template/refs/heads/main/sample.pdf).
 
-![usage](https://raw.githubusercontent.com/NYPL/nypl-marp-template/refs/heads/main/assets/header.png)
+[![usage](https://raw.githubusercontent.com/NYPL/nypl-marp-template/refs/heads/main/assets/header.png)](https://raw.githubusercontent.com/NYPL/nypl-marp-template/refs/heads/main/sample.pdf)
 
 > [!NOTE]
 > This is an early version of the template and has not been audited by the communications team. We recommend using it for internal presentations only. Please reach out to the communications team if you intend to use this template for public-facing presentations.
