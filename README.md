@@ -28,15 +28,40 @@ $ npx @marp-team/marp-cli sample.md --theme-set ./themes/nypl-marp-template.scss
 ### VS Code
 
 * Install extention: [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-* Go to settings and search for `markdown.marp.themes`
+* Open User settings and search for `markdown.marp.themes`
 * Add the following url
-
 ```text 
 https://raw.githubusercontent.com/NYPL/nypl-marp-template/refs/heads/main/themes/nypl-marp-template.scss
 ```
-
-* Open your markdown file in VS Code.  
+* Open your markdown file in VS Code and add the following frontmatter at the top:
+```
+---
+marp: true
+theme: nypl
+---
+```
 * Use the VS Code command palette (`Ctrl+Shift+P` or `Cmd+Shift+P`) and search for "Marp: Export Slide Deck" to export your slides as PDF or PowerPoint.
+
+### Pretty Title Page
+The following markdown page...
+
+```
+---
+
+<!-- _class: title -->
+
+# NYPL Marp Template
+
+Markdown-based presentation template for
+The New York Public Library
+
+![bg right 40%](https://raw.githubusercontent.com/NYPL/nypl-marp-template/refs/heads/main/assets/logo-with-text.png)
+
+---
+```
+will render like this...
+![usage](https://raw.githubusercontent.com/NYPL/nypl-marp-template/refs/heads/main/assets/header.png)
+
 
 ## Contributing
 
